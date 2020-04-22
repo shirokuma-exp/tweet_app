@@ -2,6 +2,5 @@
   %p #{@nickname}さんの投稿一覧
 
   - @tweets.each do |tweet|
-    .content_post{style:"background-image: url(#{tweet.image});"}
-      = simple_format(tweet.text)
+    = render partial: "tweets/tweet", locals: {tweet: tweet}
   = paginate(@tweets)
